@@ -1,0 +1,59 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title XSS - example
+  link(rel='stylesheet' href='styles/style.css')
+.body
+  header
+    img.left(src='images/xss.svg' alt='')
+    img.right(src='images/jsinjection.svg' alt='')
+  form(action='')
+    h1 post a comment
+    input(type='text' placeholder='Name')
+    textarea(name='' id='' rows='10' placeholder='Comment')
+    .post-button
+      .line
+      button Post
+  hr
+  .comments-container
+    h1 Comments
+    .comments-list
+      each comment in comments
+        .comment.is-infected
+          span contains XSS
+          .name= comment.name
+          .text= comment.comment
+
+#login-modal.modal-container(hidden='')
+  .bg-blur
+  .modal
+    .top
+      h1 Oops!
+      h6 something went wrong, your session is expired, please login in again 
+    form(action='')
+      input(type='text' placeholder='Email')
+      input(type='password' placeholder='Password')
+      button Post
+    .or-container
+      .line
+      .or OR
+      .line
+    .bottom
+      .facebook
+        img(src='images/facebook.svg' alt='')
+        span Log in with Facebook
+      .forgot-password Forgot Password?
+.injection
+  button(onclick='showModal()') show login modal
+  br
+  span
+    | will show modal that gonna be called during xss injection in case stealing credentials
+  br
+  span should be removed
+script.
+  function showModal() {
+  var modal = document.getElementById('login-modal');
+  modal.style.display = 'block';
+  }
