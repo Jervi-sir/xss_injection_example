@@ -71,6 +71,10 @@ body {
   background: rgba(28, 30, 41, 0);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+  color: var(--text-normal);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
 }
 .body form input::-moz-placeholder {
   color: var(--text-normal);
@@ -98,6 +102,10 @@ body {
   background: rgba(28, 30, 41, 0);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+  color: var(--text-normal);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
 }
 .body form textarea::-moz-placeholder {
   color: var(--text-normal);
@@ -238,6 +246,10 @@ body {
   border-radius: 5px;
   background: transparent;
   padding: 10px 15px;
+  color: var(--text-normal);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
 }
 .modal-container .modal form input::-moz-placeholder {
   font-weight: 300;

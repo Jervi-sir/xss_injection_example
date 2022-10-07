@@ -78,6 +78,10 @@ body {
       padding: 10px 20px;
       background: rgba(28, 30, 41, 0.0);    
       backdrop-filter: blur(5px);
+      color: var(--text-normal);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
       &::placeholder {
         color: var(--text-normal);
         font-style: normal;
@@ -93,6 +97,10 @@ body {
       padding: 10px 20px;
       background: rgba(28, 30, 41, 0.0);    
       backdrop-filter: blur(5px);
+      color: var(--text-normal);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
       &::placeholder {
         color: var(--text-normal);
         font-weight: 300;
@@ -227,6 +235,10 @@ body {
         border-radius: 5px;
         background: transparent;
         padding: 10px 15px;
+        color: var(--text-normal);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
         &::placeholder {
           font-weight: 300;
           font-size: 15px;
