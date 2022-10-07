@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+:root {
+  --bg-body: #1C1E29;
+  --bg-header: #33354B;
+  --bg-comment: #33354B;
+  --text-normal: #FFFFFF;
+  --text-second: #FFFFFF;
+  --text-title-v1: #EB3C68;
+  --text-title-v2: #00E7E7;
+  --color-infected: #EB3C68;
+  --border-input: #27293A;
+  --form-button: #33354B;
+  --form-border-button: #00E7E7;
+  --bg-body: #33354B;
+  --bg-body: #1C1E29;
+  --bg-body: #1C1E29;
+  --bg-body: #1C1E29;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+  font-family: "Inconsolata";
+}
+
+h1, h2, h3, h4, h5, h6, p, input, span, textarea {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: 0px 0px/30px 30px #1C1E29 radial-gradient(rgba(51, 53, 75, 0.7058823529) 5%, #1C1E29 5%);
+  position: relative;
+}
+
+.body {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 20px;
+}
+.body header {
+  font-family: "Indie Flower", cursive;
+  background: var(--bg-header);
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border-radius: 10px;
+  padding: 0 20px;
+}
+.body form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.body form h1 {
+  color: var(--text-normal);
+  font-weight: 700;
+  font-size: 25px;
+}
+.body form input {
+  border: 3px solid var(--border-input);
+  border-radius: 5px;
+  padding: 10px 20px;
+  background: rgba(28, 30, 41, 0);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.body form input::-moz-placeholder {
+  color: var(--text-normal);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+}
+.body form input:-ms-input-placeholder {
+  color: var(--text-normal);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+}
+.body form input::placeholder {
+  color: var(--text-normal);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+}
+.body form textarea {
+  border: 3px solid var(--border-input);
+  border-radius: 5px;
+  resize: vertical;
+  padding: 10px 20px;
+  background: rgba(28, 30, 41, 0);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.body form textarea::-moz-placeholder {
+  color: var(--text-normal);
+  font-weight: 300;
+  font-size: 18px;
+}
+.body form textarea:-ms-input-placeholder {
+  color: var(--text-normal);
+  font-weight: 300;
+  font-size: 18px;
+}
+.body form textarea::placeholder {
+  color: var(--text-normal);
+  font-weight: 300;
+  font-size: 18px;
+}
+.body form .post-button {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.body form .post-button .line {
+  flex: 1;
+  background: var(--border-input);
+  border-radius: 7px;
+  height: 5px;
+}
+.body form .post-button button {
+  background: var(--form-button);
+  border: 2px solid var(--form-border-button);
+  border-radius: 5px;
+  color: var(--text-normal);
+  font-weight: 400;
+  font-size: 20px;
+  padding: 5px 70px;
+  cursor: pointer;
+}
+.body form .post-button button:hover {
+  background: var(--bg-body);
+  transition: 0.5s;
+}
+.body hr {
+  background: var(--border-input);
+  border-radius: 11px;
+  height: 7px;
+  width: 100%;
+  border: none;
+}
+.body .comments-container h1 {
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--text-normal);
+  margin-bottom: 15px;
+}
+.body .comments-container .comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.body .comments-container .comments-list .comment {
+  position: relative;
+  background: var(--bg-comment);
+  border-radius: 10px;
+  border-left: 5px solid var(--form-border-button);
+  overflow: hidden;
+  padding: 10px 20px;
+}
+.body .comments-container .comments-list .comment.is-infected {
+  border-left: 5px solid var(--color-infected);
+}
+.body .comments-container .comments-list .comment .name {
+  color: var(--text-normal);
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.body .comments-container .comments-list .comment .text {
+  color: var(--text-normal);
+  font-weight: 300;
+  font-size: 18px;
+}
+.body .comments-container .comments-list .comment span {
+  color: var(--color-infected);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal-container {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+}
+.modal-container .bg-blur {
+  background: rgba(28, 30, 41, 0.2);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  width: 100vw;
+  height: 100vh;
+}
+.modal-container .modal {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #33354B;
+  border-radius: 14px;
+  padding: 25px 45px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: rgba(29, 33, 80, 0.7) 5px 5px, rgba(29, 33, 80, 0.6) 10px 10px, rgba(29, 33, 80, 0.4) 15px 15px, rgba(29, 33, 80, 0.3) 20px 20px, rgba(29, 33, 80, 0.1) 25px 25px;
+}
+.modal-container .modal h1 {
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--text-title-v1);
+  text-align: center;
+}
+.modal-container .modal h6 {
+  font-weight: 400;
+  font-size: 12px;
+  color: #00E7E7;
+  text-align: center;
+  width: 220px;
+  margin: auto;
+}
+.modal-container .modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.modal-container .modal form input {
+  border: 3px solid #27293A;
+  border-radius: 5px;
+  background: transparent;
+  padding: 10px 15px;
+}
+.modal-container .modal form input::-moz-placeholder {
+  font-weight: 300;
+  font-size: 15px;
+}
+.modal-container .modal form input:-ms-input-placeholder {
+  font-weight: 300;
+  font-size: 15px;
+}
+.modal-container .modal form input::placeholder {
+  font-weight: 300;
+  font-size: 15px;
+}
+.modal-container .modal form button {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--text-normal);
+  background: var(--bg-header);
+  border: 2px solid #00E7E7;
+  border-radius: 5px;
+  padding: 9px 15px;
+  cursor: pointer;
+}
+.modal-container .modal form button:hover {
+  background: var(--bg-body);
+  transition: 0.5s;
+}
+.modal-container .modal .or-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.modal-container .modal .or-container .line {
+  flex: 1;
+  height: 2px;
+  background: var(--text-normal);
+  border-radius: 11px;
+}
+.modal-container .modal .or-container .or {
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--text-normal);
+}
+.modal-container .modal .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.modal-container .modal .bottom .facebook {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.modal-container .modal .bottom .facebook span {
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--text-normal);
+}
+.modal-container .modal .bottom .forgot-password {
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--text-normal);
+}
+
+.injection {
+  width: 50%;
+  margin: auto;
+  margin-top: 5rem;
+}
+.injection button {
+  background: var(--form-button);
+  border-radius: 5px;
+  color: var(--text-normal);
+  font-weight: 400;
+  font-size: 20px;
+  padding: 5px 70px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.injection button:hover {
+  background: var(--bg-body);
+  transition: 0.5s;
+}
+.injection span {
+  color: aliceblue;
+  width: 80px;
+}/*# sourceMappingURL=style.css.map */
