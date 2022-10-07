@@ -9,10 +9,6 @@ const dbPath = './db/sample.db';
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
 
-router.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/views/index.html'));
-});
-
 
 router.get('/createdb', function(req, res) {
   let db = new sqlite3.Database(dbPath);
@@ -22,7 +18,7 @@ router.get('/createdb', function(req, res) {
   res.send('db created!');
 });
 
-router.get('/showdb', function(req, res) {
+router.get('/', function(req, res) {
   let db = new sqlite3.Database(dbPath);
   let comments = "SELECT * from 'comments'";
   let response = [];
