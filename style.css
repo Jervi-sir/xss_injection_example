@@ -326,4 +326,10 @@ body {
 .injection span {
   color: aliceblue;
   width: 80px;
+}
+
+@media only screen and (max-width: 425px) {
+  .body {
+    width: 80%;
+  }
 }/*# sourceMappingURL=style.css.map */
